@@ -7,6 +7,8 @@ authors = ["Gabriel Montañola <gabriel@montanola.com>"]
 [tool.poetry.dependencies]
 python = "^3.9"
 prefect = {extras = ["aws", "kubernetes", "viz", "templates"], version = "^0.14.19"}
+pandas = "^1.2.4"
+requests = "^2.25.1"
 
 [tool.poetry.dev-dependencies]
 black = "^21.5b1"
