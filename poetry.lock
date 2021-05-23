@@ -348,19 +348,6 @@ pyopenssl = ["pyopenssl (>=20.0.0)"]
 reauth = ["pyu2f (>=0.1.5)"]
 
 [[package]]
-name = "graphviz"
-version = "0.16"
-description = "Simple Python interface for Graphviz"
-category = "main"
-optional = false
-python-versions = ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,!=3.5.*"
-
-[package.extras]
-dev = ["tox (>=3)", "flake8", "pep8-naming", "wheel", "twine"]
-docs = ["sphinx (>=1.8)", "sphinx-rtd-theme"]
-test = ["mock (>=3)", "pytest (>=4)", "pytest-mock (>=2)", "pytest-cov"]
-
-[[package]]
 name = "heapdict"
 version = "1.0.1"
 description = "a heap with decrease-key and increase-key operations"
@@ -789,7 +776,6 @@ dask = {version = ">=2.17.0", markers = "python_version > \"3.6\""}
 dask-kubernetes = {version = ">=0.8.0", optional = true, markers = "extra == \"kubernetes\""}
 distributed = {version = ">=2.17.0", markers = "python_version > \"3.6\""}
 docker = ">=3.4.1"
-graphviz = {version = ">=0.8.3", optional = true, markers = "extra == \"viz\""}
 jinja2 = {version = ">=2.0,<3.0", optional = true, markers = "extra == \"templates\""}
 kubernetes = {version = ">=9.0.0a1,<=13.0", optional = true, markers = "extra == \"kubernetes\""}
 marshmallow = ">=3.0.0b19"
@@ -1242,7 +1228,7 @@ testing = ["pytest (>=4.6)", "pytest-checkdocs (>=1.2.3)", "pytest-flake8", "pyt
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.7.1"
-content-hash = "2485eec72a13c108e699f1165dee55291a31dcc75331a43f34be5cf1d4e4bd8d"
+content-hash = "10c06922bcabd1e4a73b6ce8fc91baa30f8494b93ff4390ff4f32946a7021c0c"
 
 [metadata.files]
 aiohttp = [
@@ -1387,10 +1373,6 @@ fsspec = [
 google-auth = [
     {file = "google-auth-1.30.0.tar.gz", hash = "sha256:9ad25fba07f46a628ad4d0ca09f38dcb262830df2ac95b217f9b0129c9e42206"},
     {file = "google_auth-1.30.0-py2.py3-none-any.whl", hash = "sha256:588bdb03a41ecb4978472b847881e5518b5d9ec6153d3d679aa127a55e13b39f"},
-]
-graphviz = [
-    {file = "graphviz-0.16-py2.py3-none-any.whl", hash = "sha256:3cad5517c961090dfc679df6402a57de62d97703e2880a1a46147bb0dc1639eb"},
-    {file = "graphviz-0.16.zip", hash = "sha256:d2d25af1c199cad567ce4806f0449cb74eb30cf451fd7597251e1da099ac6e57"},
 ]
 heapdict = [
     {file = "HeapDict-1.0.1-py3-none-any.whl", hash = "sha256:6065f90933ab1bb7e50db403b90cab653c853690c5992e69294c2de2b253fc92"},
