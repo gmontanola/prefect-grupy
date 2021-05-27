@@ -6,9 +6,15 @@ authors = ["Gabriel Montañola <gabriel@montanola.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.7.1"
-prefect = {extras = ["aws", "kubernetes", "templates"], version = "^0.14.19"}
+prefect = {extras = ["aws", "templates"], version = "^0.14.19"}
 pandas = "^1.2.4"
 requests = "^2.25.1"
+"aws-cdk.core" = "^1.105.0"
+"aws-cdk.aws-ec2" = "^1.105.0"
+"aws-cdk.aws-ecs" = "^1.105.0"
+"aws-cdk.aws-s3" = "^1.105.0"
+dask = "^2021.5.0"
+distributed = "^2021.5.0"
 
 [tool.poetry.dev-dependencies]
 black = "^21.5b1"
