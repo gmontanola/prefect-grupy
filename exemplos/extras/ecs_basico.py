@@ -9,19 +9,15 @@ whoami_task = ShellTask(name="Quem sou eu?", command="whoami", stream_output=Tru
 
 
 # Definição da flow
-with Flow("ecs-basico", result=S3Result(bucket="prefect-grupyrp")) as flow:
+with Flow("ecsbasico", result=S3Result(bucket="prefect-grupyrp")) as flow:
     pwd = pwd_task()
     whoami = whoami_task()
 
 
 if __name__ == "__main__":
     flow.run_config = ECSRun(
-        cpu=512,
-        memory=512,
-        task_definition={
-            "networkMode": "bridge",
-            "containerDefinitions": [{"name": "flow"}],
-        },
+        execution_role_arn="arn:aws:iam::648731547161:role/ECSPrefect",
+        image="prefecthq/prefect:latest-python3.7",
     )
     flow.storage = GitHub(
         repo="gmontanola/prefect-grupy", path="/exemplos/extras/ecs_basico.py"
