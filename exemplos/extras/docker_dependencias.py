@@ -5,6 +5,7 @@ import pandas as pd
 import pendulum
 import requests
 from prefect import Flow, Parameter, task
+from prefect.engine.results import S3Result
 from prefect.run_configs.docker import DockerRun
 from prefect.storage.github import GitHub
 from prefect.tasks.aws.s3 import S3Upload
@@ -49,7 +50,7 @@ def build_csv(source: List[Dict]) -> str:
 s3_upload = S3Upload(name="Upload")
 
 # Definição da flow
-with Flow("docker-dependencias") as flow:
+with Flow("docker-dependencias", result=S3Result(bucket="prefect-grupyrp")) as flow:
     bucket = Parameter("Nome do bucket", required=True)
     credenciais_aws = PrefectSecret("AWS_CREDENTIALS")
     personagens = fetch_characters()
