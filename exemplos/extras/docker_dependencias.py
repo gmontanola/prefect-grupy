@@ -67,6 +67,8 @@ if __name__ == "__main__":
         env={"EXTRA_PIP_PACKAGES": "pandas requests prefect[aws]"}
     )
     flow.storage = GitHub(
-        repo="gmontanola/prefect-grupy", path="/exemplos/extras/docker_dependencias.py"
+        repo="gmontanola/prefect-grupy",
+        path="/exemplos/extras/docker_dependencias.py",
+        secrets=["AWS_CREDENTIALS"],
     )
     flow.register(project_name="extras", add_default_labels=False, labels=["docker"])
